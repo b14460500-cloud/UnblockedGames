@@ -159,11 +159,32 @@
     <script>
       const games = [
         {
-          "id": "tomb-of-the-mask",
-          "title": "Tomb of the Mask",
-          "description": "The yellow explorer in the neon purple maze. Speed, masks, and lightning-fast reflexes.",
-          "thumbnail": "https://picsum.photos/seed/totm/400/300",
-          "url": "https://tomb-of-the-mask.github.io/"
+          "id": "level-devil",
+          "title": "Level Devil",
+          "description": "A platformer with a cruel twist. Expect the unexpected in this devilish protocol.",
+          "thumbnail": "https://picsum.photos/seed/leveldevil/400/300",
+          "url": "https://leveldevil-game.io/"
+        },
+        {
+          "id": "ovo",
+          "title": "OvO",
+          "description": "The ultimate black and white parkour protocol. Master the digital physics and reach the exit node.",
+          "thumbnail": "https://picsum.photos/seed/ovogame/400/300",
+          "url": "https://githubgames.gitlab.io/game/ovo.html"
+        },
+        {
+          "id": "block-blast",
+          "title": "Block Blast",
+          "description": "Strategic block placement protocol. Clear the grid and maximize your score.",
+          "thumbnail": "https://picsum.photos/seed/blockblast/400/300",
+          "url": "https://blockblast.game/"
+        },
+        {
+          "id": "bitlife",
+          "title": "BitLife",
+          "description": "Human existence simulator. Make choices, live lives, and see where the RNG takes your digital avatar.",
+          "thumbnail": "https://picsum.photos/seed/bitlife/400/300",
+          "url": "https://bitv1.github.io/"
         },
         {
           "id": "slope",
@@ -171,6 +192,13 @@
           "description": "High-velocity descent through the vector grid. Don't fall off the edge.",
           "thumbnail": "https://picsum.photos/seed/slopegame/400/300",
           "url": "https://kdata1.com/2020/05/slope/"
+        },
+        {
+          "id": "paper-io-2",
+          "title": "Paper.io 2",
+          "description": "Territory acquisition protocol. Capture as much digital space as possible while avoiding enemy incursions.",
+          "thumbnail": "https://picsum.photos/seed/paperio/400/300",
+          "url": "https://paper-io.com/"
         },
         {
           "id": "snow-rider-3d",
@@ -287,7 +315,7 @@
             </div>
 
             <div id="game-container" class="relative bg-black border border-neon-cyan shadow-[0_0_50px_rgba(0,255,255,0.1)] overflow-hidden aspect-video w-full">
-              <iframe src="${selectedGame.url}" class="w-full h-full border-none" title="${selectedGame.title}" allow="autoplay; fullscreen; keyboard"></iframe>
+              <iframe src="${selectedGame.url}" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-same-origin" class="w-full h-full border-none" title="${selectedGame.title}" allow="autoplay; fullscreen; keyboard"></iframe>
             </div>
 
             <div class="cyber-card">

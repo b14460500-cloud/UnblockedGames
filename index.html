@@ -3,43 +3,43 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CLCX // CYBER</title>
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+    <title>CLCX // CYBER GALAXY</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
     <style>
       :root {
+        --neon-purple: #bc13fe;
         --neon-pink: #ff00ff;
-        --neon-cyan: #00ffff;
-        --neon-yellow: #f0f000;
-        --cyber-bg: #050505;
-        --cyber-card: #0d0d0d;
-        --cyber-border: #1a1a1a;
+        --deep-space: #050510;
+        --nebula-glow: rgba(188, 19, 254, 0.2);
+        --cyber-border: #2a2a4a;
       }
 
       body {
-        background-color: var(--cyber-bg);
+        background-color: var(--deep-space);
         background-image: 
-          linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
-        background-size: 30px 30px;
+          radial-gradient(circle at 20% 30%, rgba(188, 19, 254, 0.15) 0%, transparent 50%),
+          radial-gradient(circle at 80% 70%, rgba(255, 0, 255, 0.1) 0%, transparent 50%),
+          url('https://www.transparenttextures.com/patterns/stardust.png');
         color: #fff;
         font-family: 'JetBrains Mono', monospace;
+        overflow-x: hidden;
       }
 
       .cyber-header {
-        background: rgba(5, 5, 5, 0.9);
-        backdrop-filter: blur(10px);
-        border-bottom: 2px solid var(--neon-cyan);
-        box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+        background: rgba(5, 5, 16, 0.9);
+        backdrop-filter: blur(15px);
+        border-bottom: 2px solid var(--neon-purple);
+        box-shadow: 0 0 20px rgba(188, 19, 254, 0.3);
       }
 
       .cyber-button {
         background: transparent;
-        border: 1px solid var(--neon-cyan);
-        color: var(--neon-cyan);
+        border: 1px solid var(--neon-purple);
+        color: var(--neon-purple);
         padding: 0.6rem 1.2rem;
         font-family: 'Orbitron', sans-serif;
         font-weight: 700;
@@ -52,14 +52,14 @@
       }
 
       .cyber-button:hover {
-        background: var(--neon-cyan);
-        color: #000;
-        box-shadow: 0 0 15px var(--neon-cyan);
+        background: var(--neon-purple);
+        color: #fff;
+        box-shadow: 0 0 15px var(--neon-purple);
         transform: skewX(-5deg);
       }
 
       .cyber-card {
-        background: var(--cyber-card);
+        background: rgba(13, 13, 33, 0.8);
         border: 1px solid var(--cyber-border);
         padding: 1rem;
         transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
@@ -70,7 +70,7 @@
         content: '';
         position: absolute;
         top: -1px; left: -1px; right: -1px; bottom: -1px;
-        background: linear-gradient(45deg, var(--neon-cyan), transparent, var(--neon-pink));
+        background: linear-gradient(45deg, var(--neon-purple), transparent, var(--neon-pink));
         z-index: -1;
         opacity: 0;
         transition: opacity 0.3s;
@@ -78,8 +78,8 @@
 
       .cyber-card:hover {
         transform: translateY(-5px);
-        border-color: var(--neon-cyan);
-        box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+        border-color: var(--neon-purple);
+        box-shadow: 0 0 30px rgba(188, 19, 254, 0.2);
       }
 
       .cyber-card:hover::after {
@@ -89,15 +89,15 @@
       .cyber-input {
         background: #000;
         border: 1px solid var(--cyber-border);
-        color: var(--neon-cyan);
+        color: var(--neon-purple);
         padding: 0.8rem 1rem;
         font-family: 'JetBrains Mono', monospace;
       }
 
       .cyber-input:focus {
         outline: none;
-        border-color: var(--neon-cyan);
-        box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+        border-color: var(--neon-purple);
+        box-shadow: 0 0 10px rgba(188, 19, 254, 0.3);
       }
 
       .glitch-text {
@@ -107,17 +107,17 @@
         color: #fff;
         text-shadow: 
           2px 0 var(--neon-pink),
-          -2px 0 var(--neon-cyan);
+          -2px 0 var(--neon-purple);
+      }
+
+      .neon-text-purple {
+        color: var(--neon-purple);
+        text-shadow: 0 0 10px var(--neon-purple);
       }
 
       .neon-text-pink {
         color: var(--neon-pink);
         text-shadow: 0 0 10px var(--neon-pink);
-      }
-
-      .neon-text-cyan {
-        color: var(--neon-cyan);
-        text-shadow: 0 0 10px var(--neon-cyan);
       }
 
       .game-title {
@@ -132,50 +132,71 @@
     <header class="cyber-header p-6 sticky top-0 z-40">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div id="logo" class="flex items-center gap-4 cursor-pointer group">
-          <div class="border-2 border-neon-cyan p-2 bg-black">
-            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#00ffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          <div class="border-2 border-neon-purple p-2 bg-black">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#bc13fe" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
           </div>
           <h1 class="text-5xl glitch-text">CLCX</h1>
         </div>
         <div class="relative flex-1 max-w-md">
-          <input id="search-input" type="text" placeholder="SCAN PROTOCOLS..." class="w-full cyber-input">
+          <input id="search-input" type="text" placeholder="SCAN NEURAL NET..." class="w-full cyber-input">
         </div>
       </div>
     </header>
 
     <main id="app-content" class="flex-1 p-6 md:p-12 max-w-7xl mx-auto w-full">
-      <div class="text-center py-20"><p class="text-2xl font-black uppercase animate-pulse neon-text-cyan">INITIALIZING NEURAL LINK...</p></div>
+      <div class="text-center py-20"><p class="text-2xl font-black uppercase animate-pulse neon-text-purple">INITIALIZING NEURAL LINK...</p></div>
     </main>
 
     <footer class="cyber-header p-8 mt-12">
       <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-2">
-          <span class="glitch-text text-xl">CLCX // OS</span>
+          <span class="glitch-text text-xl">CLCX // GALAXY</span>
         </div>
-        <p class="text-xs opacity-60 neon-text-pink">SYSTEM VERSION 2.0.4 // ENCRYPTED CONNECTION</p>
+        <p class="text-xs opacity-60 neon-text-pink">SYSTEM VERSION 3.2.0 // NEBULA SYNC ACTIVE</p>
       </div>
     </footer>
 
     <script>
       const games = [
         {
+          "id": "subway-surfers",
+          "title": "Subway Surfers",
+          "description": "The legendary endless runner. Dodge trains, collect coins, and escape the inspector in San Francisco.",
+          "thumbnail": "https://picsum.photos/seed/subwaysurfers/400/300",
+          "url": "https://gitallgames.github.io/projects/subway-surfers-san-francisco/index.html"
+        },
+        {
+          "id": "drive-mad",
+          "title": "Drive Mad",
+          "description": "A high-octane driving chronicle. Navigate the obstacles and reach the finish line without crashing.",
+          "thumbnail": "https://picsum.photos/seed/drivemad/400/300",
+          "url": "https://appcentergames.github.io/games/DriveMad/index.html"
+        },
+        {
+          "id": "monkey-mart",
+          "title": "Monkey Mart",
+          "description": "Manage your own primate marketplace. Harvest, stock, and sell to grow your business.",
+          "thumbnail": "https://picsum.photos/seed/monkeymart/400/300",
+          "url": "https://voidnetgames.github.io/monkeymartgame/"
+        },
+        {
           "id": "level-devil",
           "title": "Level Devil",
-          "description": "A platformer with a cruel twist. Expect the unexpected in this devilish protocol.",
+          "description": "A platformer with a cruel twist. Expect the unexpected in this devilish chronicle.",
           "thumbnail": "https://picsum.photos/seed/leveldevil/400/300",
           "url": "https://leveldevil-game.io/"
         },
         {
           "id": "ovo",
           "title": "OvO",
-          "description": "The ultimate black and white parkour protocol. Master the digital physics and reach the exit node.",
+          "description": "The ultimate black and white parkour chronicle. Master the digital physics and reach the exit node.",
           "thumbnail": "https://picsum.photos/seed/ovogame/400/300",
           "url": "https://githubgames.gitlab.io/game/ovo.html"
         },
         {
           "id": "block-blast",
           "title": "Block Blast",
-          "description": "Strategic block placement protocol. Clear the grid and maximize your score.",
+          "description": "Strategic block placement chronicle. Clear the grid and maximize your score.",
           "thumbnail": "https://picsum.photos/seed/blockblast/400/300",
           "url": "https://blockblast.game/"
         },
@@ -196,7 +217,7 @@
         {
           "id": "paper-io-2",
           "title": "Paper.io 2",
-          "description": "Territory acquisition protocol. Capture as much digital space as possible while avoiding enemy incursions.",
+          "description": "Territory acquisition chronicle. Capture as much digital space as possible while avoiding enemy incursions.",
           "thumbnail": "https://picsum.photos/seed/paperio/400/300",
           "url": "https://paper-io.com/"
         },
@@ -217,7 +238,7 @@
         {
           "id": "minecraft-classic",
           "title": "Minecraft Classic",
-          "description": "Legacy world-building protocol. Construct your digital domain.",
+          "description": "Legacy world-building chronicle. Construct your digital domain.",
           "thumbnail": "https://picsum.photos/seed/minecraft/400/300",
           "url": "https://classic.minecraft.net/"
         }
@@ -245,16 +266,16 @@
         );
 
         let html = `
-          <div class="mb-8 border-b border-neon-cyan pb-2">
-            <h2 class="text-2xl font-bold uppercase neon-text-cyan">
-              ${searchQuery ? `SCAN RESULTS: ${filteredGames.length}` : 'ACTIVE PROTOCOLS'}
+          <div class="mb-8 border-b border-neon-purple pb-2">
+            <h2 class="text-2xl font-bold uppercase neon-text-purple">
+              ${searchQuery ? `NEURAL RESULTS: ${filteredGames.length}` : 'NEURAL CHANNELS'}
             </h2>
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         `;
 
         if (filteredGames.length === 0) {
-          const message = searchQuery ? `No protocols found for "${searchQuery}"` : 'System database is empty.';
+          const message = searchQuery ? `No neural paths found for "${searchQuery}"` : 'Neural database is empty.';
           html = `
             <div class="cyber-card text-center py-20">
               <p class="text-2xl font-bold uppercase neon-text-pink">${message}</p>
@@ -267,11 +288,11 @@
               <div class="cyber-card flex flex-col group cursor-pointer game-card" data-id="${game.id}">
                 <div class="aspect-video mb-4 overflow-hidden border border-cyber-border relative">
                   <img src="${game.thumbnail}" alt="${game.title}" class="w-full h-full object-cover transition-all duration-500 group-hover:scale-110" referrerPolicy="no-referrer">
-                  <div class="absolute inset-0 bg-cyan-500/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div class="absolute inset-0 bg-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <div class="cyber-button">EXECUTE</div>
                   </div>
                 </div>
-                <h3 class="game-title neon-text-cyan">${game.title}</h3>
+                <h3 class="game-title neon-text-purple">${game.title}</h3>
                 <p class="text-sm opacity-70 font-mono">${game.description}</p>
               </div>
             `;
@@ -314,12 +335,12 @@
               </div>
             </div>
 
-            <div id="game-container" class="relative bg-black border border-neon-cyan shadow-[0_0_50px_rgba(0,255,255,0.1)] overflow-hidden aspect-video w-full">
+            <div id="game-container" class="relative bg-black border-2 border-neon-purple shadow-[0_0_50px_rgba(188,19,254,0.2)] overflow-hidden aspect-video w-full">
               <iframe src="${selectedGame.url}" sandbox="allow-forms allow-modals allow-popups allow-presentation allow-scripts allow-same-origin" class="w-full h-full border-none" title="${selectedGame.title}" allow="autoplay; fullscreen; keyboard"></iframe>
             </div>
 
             <div class="cyber-card">
-              <h2 class="text-4xl font-bold uppercase mb-4 neon-text-cyan">${selectedGame.title}</h2>
+              <h2 class="text-4xl glitch-text font-bold mb-4 neon-text-purple">${selectedGame.title}</h2>
               <p class="text-xl opacity-90 font-mono">${selectedGame.description}</p>
             </div>
           </div>

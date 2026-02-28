@@ -3,11 +3,257 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Google AI Studio App</title>
+    <title>Unblocked Arcade</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style>
+      body {
+        background-color: #f0f0f0;
+        color: #1a1a1a;
+        font-family: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+      }
+      .brutalist-border {
+        border: 2px solid black;
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+      }
+      .brutalist-button {
+        border: 2px solid black;
+        background-color: white;
+        padding: 0.5rem 1rem;
+        font-weight: 700;
+        transition: all 0.2s;
+        box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        cursor: pointer;
+      }
+      .brutalist-button:hover {
+        transform: translate(2px, 2px);
+        box-shadow: none;
+      }
+      .brutalist-card {
+        background-color: white;
+        border: 2px solid black;
+        padding: 1rem;
+        box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        transition: all 0.2s;
+      }
+      .brutalist-card:hover {
+        transform: translate(2px, 2px);
+        box-shadow: 6px 6px 0px 0px rgba(0,0,0,1);
+      }
+    </style>
   </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body class="bg-[#f0f0f0] text-[#1a1a1a] min-h-screen flex flex-col">
+    <header class="border-b-4 border-black bg-[#ffde00] p-6 sticky top-0 z-40">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-4">
+        <div id="logo" class="flex items-center gap-3 cursor-pointer">
+          <div class="bg-black p-2 brutalist-border">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#ffde00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gamepad2"><line x1="6" x2="10" y1="12" y2="12"/><line x1="8" x2="8" y1="10" y2="14"/><line x1="15" x2="15.01" y1="13" y2="13"/><line x1="18" x2="18.01" y1="11" y2="11"/><rect width="20" height="12" x="2" y="6" rx="2"/></svg>
+          </div>
+          <h1 class="text-4xl font-black tracking-tighter uppercase italic">Unblocked Arcade</h1>
+        </div>
+        <div class="relative flex-1 max-w-md">
+          <input id="search-input" type="text" placeholder="SEARCH GAMES..." class="w-full pl-4 pr-4 py-3 bg-white border-2 border-black font-bold focus:outline-none focus:ring-4 focus:ring-black/10">
+        </div>
+      </div>
+    </header>
+
+    <main id="app-content" class="flex-1 p-6 md:p-12 max-w-7xl mx-auto w-full">
+      <div class="text-center py-20"><p class="text-2xl font-black uppercase animate-pulse">LOADING ARCADE...</p></div>
+    </main>
+
+    <footer class="border-t-4 border-black bg-white p-8 mt-12">
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="flex items-center gap-2">
+          <span class="font-black uppercase tracking-tighter">Unblocked Arcade</span>
+        </div>
+        <p class="font-mono text-xs font-bold opacity-60">© 2026 UNBLOCKED ARCADE. ALL RIGHTS RESERVED.</p>
+      </div>
+    </footer>
+
+    <script>
+      const games = [
+        {
+          "id": "2048",
+          "title": "2048",
+          "description": "Join the numbers and get to the 2048 tile!",
+          "thumbnail": "https://picsum.photos/seed/2048/400/300",
+          "url": "https://play2048.co/"
+        },
+        {
+          "id": "tetris",
+          "title": "Tetris",
+          "description": "The classic block-stacking puzzle game.",
+          "thumbnail": "https://picsum.photos/seed/tetris/400/300",
+          "url": "https://tetris.com/play-tetris"
+        },
+        {
+          "id": "snake",
+          "title": "Snake",
+          "description": "Eat the apples and grow as long as possible.",
+          "thumbnail": "https://picsum.photos/seed/snake/400/300",
+          "url": "https://www.google.com/logos/2010/pacman10-i.html"
+        },
+        {
+          "id": "pacman",
+          "title": "Pac-Man",
+          "description": "Classic arcade maze game.",
+          "thumbnail": "https://picsum.photos/seed/pacman/400/300",
+          "url": "https://www.google.com/logos/2010/pacman10-i.html"
+        },
+        {
+          "id": "dino",
+          "title": "Chrome Dino",
+          "description": "The famous offline dinosaur runner.",
+          "thumbnail": "https://picsum.photos/seed/dino/400/300",
+          "url": "https://chromedino.com/"
+        },
+        {
+          "id": "flappy",
+          "title": "Flappy Bird",
+          "description": "Fly through the pipes without crashing.",
+          "thumbnail": "https://picsum.photos/seed/flappy/400/300",
+          "url": "https://flappybird.io/"
+        }
+      ];
+
+      let searchQuery = '';
+      let selectedGame = null;
+
+      const appContent = document.getElementById('app-content');
+      const searchInput = document.getElementById('search-input');
+      const logo = document.getElementById('logo');
+
+      function render() {
+        if (selectedGame) {
+          renderPlayer();
+        } else {
+          renderGrid();
+        }
+      }
+
+      function renderGrid() {
+        const filteredGames = games.filter(game => 
+          game.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+          game.description.toLowerCase().includes(searchQuery.toLowerCase())
+        );
+
+        let html = `
+          <div class="mb-8">
+            <h2 class="text-2xl font-black uppercase border-b-4 border-black inline-block">
+              ${searchQuery ? `SEARCH RESULTS: ${filteredGames.length}` : 'POPULAR GAMES'}
+            </h2>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        `;
+
+        if (filteredGames.length === 0) {
+          html = `
+            <div class="brutalist-card text-center py-20">
+              <p class="text-2xl font-black uppercase">No games found for "${searchQuery}"</p>
+              <button id="clear-search" class="mt-4 brutalist-button">CLEAR SEARCH</button>
+            </div>
+          `;
+        } else {
+          filteredGames.forEach(game => {
+            html += `
+              <div class="brutalist-card flex flex-col group cursor-pointer game-card" data-id="${game.id}">
+                <div class="aspect-video mb-4 overflow-hidden border-2 border-black relative">
+                  <img src="${game.thumbnail}" alt="${game.title}" class="w-full h-full object-cover transition-transform group-hover:scale-105" referrerPolicy="no-referrer">
+                  <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                    <div class="bg-[#ffde00] p-3 border-2 border-black font-black uppercase">PLAY NOW</div>
+                  </div>
+                </div>
+                <h3 class="text-xl font-black uppercase mb-1">${game.title}</h3>
+                <p class="text-sm font-medium opacity-70 line-clamp-2">${game.description}</p>
+              </div>
+            `;
+          });
+          html += '</div>';
+        }
+
+        appContent.innerHTML = html;
+
+        document.querySelectorAll('.game-card').forEach(card => {
+          card.addEventListener('click', () => {
+            const id = card.getAttribute('data-id');
+            selectedGame = games.find(g => g.id === id);
+            render();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          });
+        });
+
+        const clearBtn = document.getElementById('clear-search');
+        if (clearBtn) {
+          clearBtn.addEventListener('click', () => {
+            searchQuery = '';
+            searchInput.value = '';
+            render();
+          });
+        }
+      }
+
+      function renderPlayer() {
+        appContent.innerHTML = `
+          <div class="flex flex-col gap-6">
+            <div class="flex items-center justify-between">
+              <button id="back-btn" class="brutalist-button flex items-center gap-2">
+                ← BACK TO ARCADE
+              </button>
+              <div class="flex gap-2">
+                <button id="fullscreen-btn" class="brutalist-button p-2">⛶</button>
+                <a href="${selectedGame.url}" target="_blank" class="brutalist-button p-2">↗</a>
+                <button id="close-btn" class="brutalist-button p-2 bg-red-500 text-white">✕</button>
+              </div>
+            </div>
+
+            <div id="game-container" class="relative bg-black border-4 border-black shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] overflow-hidden aspect-video w-full">
+              <iframe src="${selectedGame.url}" class="w-full h-full border-none" title="${selectedGame.title}" allow="autoplay; fullscreen; keyboard"></iframe>
+            </div>
+
+            <div class="brutalist-card mt-4">
+              <h2 class="text-3xl font-black uppercase mb-2">${selectedGame.title}</h2>
+              <p class="text-lg font-medium opacity-80">${selectedGame.description}</p>
+            </div>
+          </div>
+        `;
+
+        document.getElementById('back-btn').addEventListener('click', () => {
+          selectedGame = null;
+          render();
+        });
+
+        document.getElementById('close-btn').addEventListener('click', () => {
+          selectedGame = null;
+          render();
+        });
+
+        document.getElementById('fullscreen-btn').addEventListener('click', () => {
+          const container = document.getElementById('game-container');
+          if (container.requestFullscreen) {
+            container.requestFullscreen();
+          }
+        });
+      }
+
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        selectedGame = null;
+        render();
+      });
+
+      logo.addEventListener('click', () => {
+        selectedGame = null;
+        searchQuery = '';
+        searchInput.value = '';
+        render();
+      });
+
+      // Initial render
+      render();
+    </script>
   </body>
 </html>
 

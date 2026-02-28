@@ -1,0 +1,44 @@
+[
+  {
+    "id": "2048",
+    "title": "2048",
+    "description": "Join the numbers and get to the 2048 tile!",
+    "thumbnail": "https://picsum.photos/seed/2048/400/300",
+    "url": "https://play2048.co/"
+  },
+  {
+    "id": "tetris",
+    "title": "Tetris",
+    "description": "The classic block-stacking puzzle game.",
+    "thumbnail": "https://picsum.photos/seed/tetris/400/300",
+    "url": "https://tetris.com/play-tetris"
+  },
+  {
+    "id": "snake",
+    "title": "Snake",
+    "description": "Eat the apples and grow as long as possible.",
+    "thumbnail": "https://picsum.photos/seed/snake/400/300",
+    "url": "https://www.google.com/logos/2010/pacman10-i.html"
+  },
+  {
+    "id": "pacman",
+    "title": "Pac-Man",
+    "description": "Classic arcade maze game.",
+    "thumbnail": "https://picsum.photos/seed/pacman/400/300",
+    "url": "https://www.google.com/logos/2010/pacman10-i.html"
+  },
+  {
+    "id": "dino",
+    "title": "Chrome Dino",
+    "description": "The famous offline dinosaur runner.",
+    "thumbnail": "https://picsum.photos/seed/dino/400/300",
+    "url": "https://chromedino.com/"
+  },
+  {
+    "id": "flappy",
+    "title": "Flappy Bird",
+    "description": "Fly through the pipes without crashing.",
+    "thumbnail": "https://picsum.photos/seed/flappy/400/300",
+    "url": "https://flappybird.io/"
+  }
+]
